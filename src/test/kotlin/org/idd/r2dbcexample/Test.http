@@ -1,0 +1,15 @@
+### get songs (3.2.1 error, 3.2.2 works)
+GET http://localhost:8080/songs
+Accept: application/json
+
+### get song by id (3.2.1 error, 3.2.2 works)
+GET http://localhost:8080/songs/1
+Accept: application/json
+
+### get all song count (3.2.1 works, 3.2.2 works)
+GET http://localhost:8080/songs/count
+ACCEPT: application/json
+
+### get song by category (3.2.1 works, 3.2.2 error)
+GET http://localhost:8080/songs/count?category=ELECTRONIC
+ACCEPT: application/json
