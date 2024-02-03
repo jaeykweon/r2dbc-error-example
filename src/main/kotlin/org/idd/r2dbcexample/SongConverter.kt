@@ -7,12 +7,11 @@ import org.springframework.data.convert.ReadingConverter
 @ReadingConverter
 class SongReadConverter: Converter<Row, Song> {
     override fun convert(source: Row): Song {
-        val category = Song.Category.fromRubyString(source.get("category") as String)
         return Song(
             pk = source.get("pk") as Long,
             title = source.get("title") as String,
             artist = source.get("artist") as String,
-            category = category
+            categoryValue = source.get("category") as String
         )
     }
 }

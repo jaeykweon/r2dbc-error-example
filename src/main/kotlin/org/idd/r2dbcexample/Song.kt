@@ -9,17 +9,20 @@ data class Song(
     val pk: Long,
     val title: String,
     val artist: String,
-    val category: Category
+    private val categoryValue: String
 ) {
-    enum class Category(val rubyValue: String) {
-        ELECTRONIC("SONG::ELECTRONIC"),
-        RAP("SONG::RAP"),
-        BALLAD("SONG::BALLAD"),
-        ETC("SONG::ETC")
+    val category = Category.fromString(categoryValue)
+
+    enum class Category {
+        ELECTRONIC,
+        RAP,
+        BALLAD,
+        ETC
         ;
+
         companion object {
-            fun fromRubyString(ruby: String): Category {
-                return entries.first { it.rubyValue == ruby }
+            fun fromString(input: String): Category {
+                return entries.first { it.name == input }
             }
         }
     }

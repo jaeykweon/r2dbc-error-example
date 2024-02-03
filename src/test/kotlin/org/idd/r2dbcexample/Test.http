@@ -10,6 +10,10 @@ Accept: application/json
 GET http://localhost:8080/songs/count
 ACCEPT: application/json
 
-### get song by category (3.2.1 works, 3.2.2 error)
+### get song count by category (3.2.1 works, 3.2.2 error)
 GET http://localhost:8080/songs/count?category=ELECTRONIC
+ACCEPT: application/json
+
+### song exists (3.2.1 works, 3.2.2 )
+GET http://localhost:8080/songs/exists?category=ELECTRONIC
 ACCEPT: application/json

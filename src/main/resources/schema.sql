@@ -10,8 +10,8 @@ CREATE TABLE song (
 INSERT INTO song
     (pk, title, artist, category)
 values
-    (1, 'hope', 'NF', 'SONG::RAP');
+    (1, 'hope', 'NF', 'RAP');
 INSERT INTO song
     (pk, title, artist, category)
 values
-    (2, 'the great deception', 'PsoGnar', 'SONG::ELECTRONIC');
+    (2, 'the great deception', 'PsoGnar', 'ELECTRONIC');

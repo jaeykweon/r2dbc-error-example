@@ -10,7 +10,9 @@ class SongController(
     private val songService: SongService
 ) {
     @GetMapping("/songs")
-    suspend fun getSongs(): List<SongResponse> {
+    suspend fun getSongs(
+        @RequestParam category: Song.Category?
+    ): List<SongResponse> {
         return songService.getSongs()
     }
 
@@ -28,5 +30,12 @@ class SongController(
         } else {
             songService.getSongCount()
         }
+    }
+
+    @GetMapping("/songs/exists")
+    suspend fun existsByCategory(
+        @RequestParam category: Song.Category
+    ): Boolean {
+        return songService.existsByCategory(category)
     }
 }

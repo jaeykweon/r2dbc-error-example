@@ -25,4 +25,8 @@ class SongService(
     suspend fun getSongCountByCategory(category: Song.Category): Long {
         return songRepository.countByCategory(category)
     }
+
+    suspend fun existsByCategory(category: Song.Category): Boolean {
+        return songRepository.existsByCategory(category)
+    }
 }
