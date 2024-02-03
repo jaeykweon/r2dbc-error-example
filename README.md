@@ -13,7 +13,7 @@ You can compare 3.2.1 and 3.2.2 in this example code.
 
 ## Error Description
 
-Codes that added at `R2dbcEntityTemplate.java` in 3.2.2 handle count query method differently compared to 3.2.1.
+Codes added at `R2dbcEntityTemplate.java` in 3.2.2 handle 'count query method' differently compared to 3.2.1.
 
 You can see changes below or [Comparing changes](https://github.com/spring-projects/spring-data-relational/compare/3.2.1...3.2.2)
 
@@ -45,9 +45,11 @@ In 3.2.1, `R2dbcEntityTemplate` checks whether return type is simple type or not
 In 3.2.2 however, it checks whether custom converter exists or not before checking simple type. In this time, query result enters ReadingConverter. Query result have only one column, and error occurs.
 
 ## How to test
+
 1. set version of `org.springframework.boot` to 3.2.1 or 3.2.2 in build.gradle and reload
 2. run `R2dbcErrorExampleApplication`
 3. run each http request at Test.http
+![img.png](img.png)
 
 ## Suggestion
 
